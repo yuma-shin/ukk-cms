@@ -24,29 +24,29 @@ export default function Article({ post }: Props) {
           (window as Window).close();
     };
     return (
-        <Box>
-            <Header title={post.title}/>
-            <Container as="main" maxW="container.md" marginTop="4" marginBottom="16">
-                <Stack spacing="8">
-                    <Box display='flex' justifyContent='right' alignItems='right'>
-                        <HStack mr={5}>
-                            <Text>公開日 : </Text>
-                            <DateTime datetime={post.publishedAt || ""} />
-                        </HStack>
-                        <HStack mr={5}>
-                            <Text>更新日 : </Text>
-                            <DateTime datetime={post.updatedAt || ""} />
-                        </HStack>
-                    </Box>
-                </Stack>
-                <Divider marginY="4" />
-                {/* 記事本文 */}
-                <MarkdownTemplate source={post.text} />
-                <Box display='flex' justifyContent='right' alignItems='right' mt={10}>
-                    <Button onClick={CloseButton}>Close</Button>
+        <>
+        <Header title={post.title}/>
+        <Container as="main" maxW="container.md" marginTop="4" marginBottom="16">
+            <Stack spacing="8">
+                <Box display='flex' justifyContent='right' alignItems='right'>
+                    <HStack mr={5}>
+                        <Text>公開日 : </Text>
+                        <DateTime datetime={post.publishedAt || ""} />
+                    </HStack>
+                    <HStack mr={5}>
+                        <Text>更新日 : </Text>
+                        <DateTime datetime={post.updatedAt || ""} />
+                    </HStack>
                 </Box>
-            </Container >
-        </Box >
+            </Stack>
+            <Divider marginY="4" />
+            {/* 記事本文 */}
+            <MarkdownTemplate source={post.text} />
+            <Box display='flex' justifyContent='right' alignItems='right' mt={10}>
+                <Button onClick={CloseButton}>Close</Button>
+            </Box>
+        </Container >
+        </>
     )
 }
 

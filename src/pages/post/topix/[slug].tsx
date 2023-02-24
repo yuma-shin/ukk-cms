@@ -24,7 +24,7 @@ export default function Article({ post }: Props) {
           (window as Window).close();
     };
     return (
-        <Box>
+        <>
             <Header title={post.title}/>
             <Container as="main" maxW="container.md" marginTop="4" marginBottom="16">
                 <Stack spacing="8">
@@ -46,7 +46,7 @@ export default function Article({ post }: Props) {
                     <Button onClick={CloseButton}>Close</Button>
                 </Box>
             </Container >
-        </Box >
+        </>
     )
 }
 
