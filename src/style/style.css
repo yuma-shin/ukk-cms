@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .background-info {
     top: 0;
     bottom: 0;
