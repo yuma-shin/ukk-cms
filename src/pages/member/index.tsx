@@ -65,6 +65,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <TagLabel>{post.category}</TagLabel>
               </Tag>
               <Link href={`/post/member/${post.id}`} target="_blank">
+                <DateTime datetime={post.publishedAt || ""} />
                   <Heading
                       as="h2"
                       fontSize="md"
