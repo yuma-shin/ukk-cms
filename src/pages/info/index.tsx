@@ -56,6 +56,7 @@ const settings: Settings = {
   slidesToShow: 2,
   autoplay: true,
   speed: 1000,
+  autoplaySpeed: 5000,
   cssEase: 'ease-out',
   arrows: true,
   pauseOnHover: true,
