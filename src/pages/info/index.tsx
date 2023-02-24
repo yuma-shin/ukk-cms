@@ -55,9 +55,10 @@ const settings: Settings = {
   centerMode: true,
   slidesToShow: 2,
   autoplay: true,
-  speed: 1500,
+  speed: 1000,
   cssEase: 'ease-out',
   arrows: true,
+  pauseOnHover: true,
   responsive: [
     {
       breakpoint: 992,
