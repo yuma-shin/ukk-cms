@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
-import { Box, Card, CardBody,Image,Text } from '@chakra-ui/react'
+import { Box,Image } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
-import { Header } from 'components/Header';
 import Slick, { Settings } from 'react-slick';
 import { DateTime } from 'components/DateTime'
 import styled from 'styled-components'
