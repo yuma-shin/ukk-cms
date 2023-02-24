@@ -78,7 +78,7 @@ const settings: Settings = {
 const FixedWindowLink = ({ href, children }:any) => {
   const handleClick = (e:any) => {
     e.preventDefault();
-    window.open(href, '_blank', 'width=680,height=550');
+    window.open(href, '_blank', 'width=680,height=550,status=no,location=no,scrollbars=yes,directories=no,menubar=no,resizable=no,toolbar=no');
   };
 
   return (
