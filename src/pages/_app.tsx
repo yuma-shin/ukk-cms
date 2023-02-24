@@ -8,7 +8,16 @@ const fonts = {
   body: "'Noto Sans JP'"
 }
 
-const theme = extendTheme({ fonts })
+const theme = extendTheme({ 
+  fonts,
+  styles: {
+    global: () => ({
+      body: {
+        bg: "",
+      },
+    }),
+  }
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
