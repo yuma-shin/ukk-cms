@@ -75,21 +75,6 @@ const settings: Settings = {
   ],
 };
 
-const FixedWindowLink = ({ href, children }:any) => {
-  const handleClick = (e:any) => {
-    e.preventDefault();
-    window.open(href, '_blank', 'width=680,height=550,status=no,location=no,scrollbars=yes,directories=no,menubar=no,resizable=no,toolbar=no');
-  };
-
-  return (
-    <div className='title'>
-      <a href={href} onClick={handleClick}>
-        {children}
-      </a>
-    </div>
-  );
-};
-
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
@@ -122,7 +107,8 @@ const Home: NextPage<Props> = ({ posts }) => {
                 {post.directlink ? (
                   <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
                 ) : (
-                  <FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
+                  //<FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
+                  <div className='title'><a href={`/post/topix/${post.id}`} target="_blank">{post.title}</a></div>
                 )}
             </div>
             </Box>
