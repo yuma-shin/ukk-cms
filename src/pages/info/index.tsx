@@ -103,7 +103,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             <div className="background-info">
               {post.category ? (
                 <div className='background-news'>
-                  {post.category.category}
+                  {post.category}
                 </div>
               ) : (
                 <div className='background-news'>
