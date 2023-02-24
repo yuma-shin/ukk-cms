@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
-import { Heading, Container, Box, Card, CardBody,Image,Text } from '@chakra-ui/react'
+import { Box, Card, CardBody,Image,Text } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import { Header } from 'components/Header';
 import Slick, { Settings } from 'react-slick';
 import { DateTime } from 'components/DateTime'
+import styled from 'styled-components'
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,14 +26,38 @@ type Props = {
   posts: Post[];
 };
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+`
+
+const SliderWrapper = styled.div`
+  width: calc(100%);
+  .slick-next{ 
+    right:0!important;
+  };
+  .slick-prev{ 
+    left:0!important;
+  };
+  .slick-arrow{ 
+    z-index:2!important;
+  };
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+`
+
 const settings: Settings = {
-  dots: true,
+  //dots: true,
   infinite: true,
   centerMode: true,
   slidesToShow: 2,
   autoplay: true,
-  speed: 1000,
+  speed: 1500,
   cssEase: 'ease-out',
+  arrows: true,
   responsive: [
     {
       breakpoint: 992,
@@ -67,6 +92,8 @@ const FixedWindowLink = ({ href, children }:any) => {
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
+    <Container>
+      <SliderWrapper>
       <Slick {...settings}>
         {
           posts.map((post) => (
@@ -101,6 +128,8 @@ const Home: NextPage<Props> = ({ posts }) => {
           ))
         }
       </Slick>
+      </SliderWrapper>
+    </Container>
     </>
   )
 }
