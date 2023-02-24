@@ -49,6 +49,7 @@ const SliderWrapper = styled.div`
   }
 `
 
+
 const settings: Settings = {
   infinite: true,
   centerMode: true,
