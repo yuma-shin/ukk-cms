@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box,Image, LinkOverlay } from '@chakra-ui/react'
+import { Box,Image, LinkOverlay,LinkBox } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import Slick, { Settings } from 'react-slick';
@@ -85,9 +85,7 @@ const FixedWindowLink = ({ href, children }:any) => {
 
   return (
     <div className='title'>
-      <a href={href} onClick={handleClick}>
-        {children}
-      </a>
+      <LinkOverlay href={href} onClick={handleClick}>{children}</LinkOverlay>
     </div>
   );
 };
@@ -122,7 +120,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         <Slick {...settings}>
           {
             posts.map((post) => (
-              <Box key={post.id} color="white">
+              <LinkBox key={post.id} color="white">
                 <NewLogo date={post.publishedAt} />
                 <div className="background-info">
                     {post.image ? (
@@ -151,13 +149,14 @@ const Home: NextPage<Props> = ({ posts }) => {
                       </div>
                     )}
                     {post.directlink ? (
-                      <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+                      //<div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+                      <div className='title'><LinkOverlay href={post.directlink} target="_blank">{post.title}</LinkOverlay></div>
                     ) : (
                       <FixedWindowLink href={`/post/info/${post.id}`}>{post.title}</FixedWindowLink>
                       //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
                     )}
                 </div>
-              </Box>
+              </LinkBox>
             ))
           }
         </Slick>
