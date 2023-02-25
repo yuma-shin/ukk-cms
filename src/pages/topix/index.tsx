@@ -29,11 +29,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 `
 
 const SliderWrapper = styled.div`
-  width: calc(100% - 1px);
+  width: calc(100% - 0.5px);
   .slick-next{ 
     right:0!important;
   };
