@@ -23,6 +23,19 @@ type Props = {
   posts: Post[];
 };
 
+const FixedWindowLink = ({ href, children }:any) => {
+  const handleClick = (e:any) => {
+    e.preventDefault();
+    window.open(href, '_blank', 'width=680,height=550,status=no,location=no,scrollbars=yes,directories=no,menubar=no,resizable=no,toolbar=no');
+  };
+
+  return (
+    <div>
+      <a href={href} onClick={handleClick}>{children}</a>
+    </div>
+  );
+};
+
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
@@ -34,7 +47,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               <Tag size={"md"} variant='subtle' colorScheme='cyan'>
                 <TagLabel>{post.category}</TagLabel>
               </Tag>
-              <Link href={`/post/member/${post.id}`} target="_blank">
+              <FixedWindowLink href={`/post/member/${post.id}`}>
                 <DateTime datetime={post.publishedAt || ""} />
                   <Heading
                       as="h2"
@@ -46,7 +59,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   >
                       {post.title}
                   </Heading>
-              </Link>
+              </FixedWindowLink>
             </HStack>
             <Stack mt="5" mb="5" borderBottom="1px" borderColor="gray.300" />
           </Box>

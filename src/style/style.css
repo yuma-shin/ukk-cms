@@ -73,19 +73,19 @@ a:hover{
     animation: color-change 3s linear infinite;
 }
 @keyframes color-change {
-0%,100%{
-    border-color:#ff1493;
-}
+    0%,100%{
+        border-color:#ff1493;
+    }
 
-25%{
-    border-color:#8b4513;
-}
+    25%{
+        border-color:#8b4513;
+    }
 
-50%{
-    border-color:#0091EA;
-}
+    50%{
+        border-color:#0091EA;
+    }
 
-75%{
-    border-color:#9400d3;
-}
+    75%{
+        border-color:#9400d3;
+    }
 }
