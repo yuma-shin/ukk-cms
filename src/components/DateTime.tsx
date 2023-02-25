@@ -13,7 +13,7 @@ type Props = {
 export const DateTime: FC<Props> = ({ datetime }) => {
     dayjs.extend(utc)
     dayjs.extend(timezone);
-    const formatDate = dayjs.utc(datetime).tz('Asia/Tokyo').format('YYYY-MM-DD')
+    const formatDate = dayjs.utc(datetime).tz('Asia/Tokyo').format('YYYY.MM.DD (ddd)')
     return (
         <Text as="time" dateTime={formatDate}>
             {formatDate}

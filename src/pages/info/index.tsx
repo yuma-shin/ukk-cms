@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box,Image } from '@chakra-ui/react'
+import { Box,Image, LinkOverlay } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import Slick, { Settings } from 'react-slick';
@@ -104,7 +104,7 @@ const NewLogo = ({ date }:any) => {
       if (diffDays <= 10 ) {
         return (
           <div className='background-new'>
-            New
+            New !
           </div>
         )
       }
@@ -123,39 +123,40 @@ const Home: NextPage<Props> = ({ posts }) => {
           {
             posts.map((post) => (
               <Box key={post.id} color="white">
-              <div className="background-info">
-                {post.category ? (
-                  <div>
-                    <div className='background-news'>
-                      {post.category}
-                    </div>
-                    <NewLogo date={post.publishedAt} />
-                  </div>
-                ) : (
-                  <div>
-                    <div className='background-news'>
-                      None
-                    </div>
-                    <NewLogo date={post.publishedAt} />
-                  </div>
-                )}
-                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
-                  {post.image ? (
-                      <Image
-                      src={post.image.url}
-                      width="300px"
-                      height="150px"
-                      />
+                <NewLogo date={post.publishedAt} />
+                <div className="background-info">
+                    {post.image ? (
+                        <Image
+                        src={post.image.url}
+                        width="300px"
+                        height="150px"
+                        borderRadius="5px"
+                        />
+                      ) : (
+                          <Image src="/noimg.png" alt="No Image" height="150px" width="300px" borderRadius="5px"/>
+                      )}
+                    {post.category ? (
+                      <div className='category'>
+                        <div className='background-news'>
+                          {post.category}
+                        </div>
+                        <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                      </div>
                     ) : (
-                        <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
+                      <div className='category'>
+                        <div className='background-news'>
+                          None
+                        </div>
+                        <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                      </div>
                     )}
-                  {post.directlink ? (
-                    <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
-                  ) : (
-                    <FixedWindowLink href={`/post/info/${post.id}`}>{post.title}</FixedWindowLink>
-                    //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
-                  )}
-              </div>
+                    {post.directlink ? (
+                      <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+                    ) : (
+                      <FixedWindowLink href={`/post/info/${post.id}`}>{post.title}</FixedWindowLink>
+                      //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
+                    )}
+                </div>
               </Box>
             ))
           }

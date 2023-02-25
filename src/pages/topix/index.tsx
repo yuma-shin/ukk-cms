@@ -103,7 +103,7 @@ const NewLogo = ({ date }:any) => {
       if (diffDays <= 10 ) {
         return (
           <div className='background-new'>
-            New
+            New !
           </div>
         )
       }
@@ -121,32 +121,33 @@ const Home: NextPage<Props> = ({ posts }) => {
         {
           posts.map((post) => (
             <Box key={post.id} color="white" shadow={"xl"}>
+            <NewLogo date={post.publishedAt} />
             <div className="background-info">
-              {post.category ? (
-                <div>
-                  <div className='background-news'>
-                    {post.category}
-                  </div>
-                  <NewLogo date={post.publishedAt} />
-                </div>
-              ) : (
-                <div>
-                  <div className='background-news'>
-                    None
-                  </div>
-                  <NewLogo date={post.publishedAt} />
-                </div>
-              )}
-              <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
               {post.image ? (
                   <Image
                   src={post.image.url}
                   width="300px"
                   height="150px"
+                  borderRadius="5px"
                   />
                 ) : (
-                    <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
+                    <Image src="/noimg.png" alt="No Image" height="150px" width="300px" borderRadius="5px"/>
                 )}
+              {post.category ? (
+                <div className='category'>
+                  <div className='background-news'>
+                    {post.category}
+                  </div>
+                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                </div>
+              ) : (
+                <div className='category'>
+                  <div className='background-news'>
+                    None
+                  </div>
+                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                </div>
+              )}
               {post.directlink ? (
                 <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
               ) : (
