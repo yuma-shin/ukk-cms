@@ -92,6 +92,27 @@ const FixedWindowLink = ({ href, children }:any) => {
   );
 };
 
+const NewLogo = ({ date }:any) => {
+  const publishDate = new Date(date)
+  const now = new Date()
+  const diffTime = now.getTime() - publishDate.getTime()
+  const diffDays = diffTime / (1000 * 3600 * 24)
+  return (
+    <>
+    {(() => {
+      //公開後10日以内の投稿にNewマークをつける
+      if (diffDays <= 10 ) {
+        return (
+          <div className='background-new'>
+            New
+          </div>
+        )
+      }
+    })()}
+    </>
+  )
+}
+
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
@@ -103,30 +124,36 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Box key={post.id} color="white" shadow={"xl"}>
             <div className="background-info">
               {post.category ? (
-                <div className='background-news'>
-                  {post.category}
+                <div>
+                  <div className='background-news'>
+                    {post.category}
+                  </div>
+                  <NewLogo date={post.publishedAt} />
                 </div>
               ) : (
-                <div className='background-news'>
-                  None
+                <div>
+                  <div className='background-news'>
+                    None
+                  </div>
+                  <NewLogo date={post.publishedAt} />
                 </div>
               )}
-                <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
-                {post.image ? (
-                    <Image
-                    src={post.image.url}
-                    width="300px"
-                    height="150px"
-                    />
-                  ) : (
-                      <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
-                  )}
-                {post.directlink ? (
-                  <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+              <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+              {post.image ? (
+                  <Image
+                  src={post.image.url}
+                  width="300px"
+                  height="150px"
+                  />
                 ) : (
-                  <FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
-                  //<div className='title'><a href={`/post/topix/${post.id}`} target="_blank">{post.title}</a></div>
+                    <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
                 )}
+              {post.directlink ? (
+                <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+              ) : (
+                <FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
+                //<div className='title'><a href={`/post/topix/${post.id}`} target="_blank">{post.title}</a></div>
+              )}
             </div>
             </Box>
           ))

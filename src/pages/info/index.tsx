@@ -92,46 +92,74 @@ const FixedWindowLink = ({ href, children }:any) => {
   );
 };
 
+const NewLogo = ({ date }:any) => {
+  const publishDate = new Date(date)
+  const now = new Date()
+  const diffTime = now.getTime() - publishDate.getTime()
+  const diffDays = diffTime / (1000 * 3600 * 24)
+  return (
+    <>
+    {(() => {
+      //公開後10日以内の投稿にNewマークをつける
+      if (diffDays <= 10 ) {
+        return (
+          <div className='background-new'>
+            New
+          </div>
+        )
+      }
+    })()}
+    </>
+  )
+}
+
 const Home: NextPage<Props> = ({ posts }) => {
+
   return (
     <>
     <Container>
       <SliderWrapper>
-      <Slick {...settings}>
-        {
-          posts.map((post) => (
-            <Box key={post.id} color="white">
-            <div className="background-info">
-              {post.category ? (
-                <div className='background-news'>
-                  {post.category}
-                </div>
-              ) : (
-                <div className='background-news'>
-                  None
-                </div>
-              )}
-                <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
-                {post.image ? (
-                    <Image
-                    src={post.image.url}
-                    width="300px"
-                    height="150px"
-                    />
-                  ) : (
-                      <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
-                  )}
-                {post.directlink ? (
-                  <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+        <Slick {...settings}>
+          {
+            posts.map((post) => (
+              <Box key={post.id} color="white">
+              <div className="background-info">
+                {post.category ? (
+                  <div>
+                    <div className='background-news'>
+                      {post.category}
+                    </div>
+                    <NewLogo date={post.publishedAt} />
+                  </div>
                 ) : (
-                  <FixedWindowLink href={`/post/info/${post.id}`}>{post.title}</FixedWindowLink>
-                  //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
+                  <div>
+                    <div className='background-news'>
+                      None
+                    </div>
+                    <NewLogo date={post.publishedAt} />
+                  </div>
                 )}
-            </div>
-            </Box>
-          ))
-        }
-      </Slick>
+                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                  {post.image ? (
+                      <Image
+                      src={post.image.url}
+                      width="300px"
+                      height="150px"
+                      />
+                    ) : (
+                        <Image src="/noimg.png" alt="No Image" height="150px" width="300px"/>
+                    )}
+                  {post.directlink ? (
+                    <div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+                  ) : (
+                    <FixedWindowLink href={`/post/info/${post.id}`}>{post.title}</FixedWindowLink>
+                    //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
+                  )}
+              </div>
+              </Box>
+            ))
+          }
+        </Slick>
       </SliderWrapper>
     </Container>
     </>
