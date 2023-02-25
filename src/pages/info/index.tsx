@@ -29,6 +29,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 `
 
 const SliderWrapper = styled.div`
