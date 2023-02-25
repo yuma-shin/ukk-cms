@@ -48,7 +48,6 @@ const SliderWrapper = styled.div`
   }
 `
 
-
 const settings: Settings = {
   //dots: true,
   infinite: true,
