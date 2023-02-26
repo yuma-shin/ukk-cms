@@ -32,7 +32,7 @@ const Container = styled.div`
 `
 
 const SliderWrapper = styled.div`
-  width: calc(100% - 0.5px);
+  width: calc(100%);
   .slick-next{ 
     right:0!important;
   };
@@ -45,7 +45,7 @@ const SliderWrapper = styled.div`
   .slick-prev:before,
   .slick-next:before {
     color: black;
-  }
+  };
 `
 
 

@@ -8,7 +8,7 @@
     height:340px;
     transition:0.3s;
     padding:10px;
-    border: 4px solid transparent;
+    border: 4px solid rgba(54, 54, 54, 0.02);
     backdrop-filter: blur(5px);
     background-color: rgba(54, 54, 54, 0.3);
 }
@@ -90,4 +90,28 @@ a:hover{
     75%{
         border-color:#9400d3;
     }
+}
+
+.slide-arrow {
+    background-color: #333;
+    bottom: 0;
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.prev-arrow {
+border-bottom: 10px solid #333;
+border-left: 0;
+border-right: 10px solid #fff;
+border-top: 10px solid #333;
+left: -25px;
+}
+.next-arrow {
+border-bottom: 10px solid #333;
+border-left: 10px solid #fff;
+border-right: 0;
+border-top: 10px solid #333;
+right: -25px;
 }

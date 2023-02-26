@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box,Image, LinkOverlay,LinkBox } from '@chakra-ui/react'
+import { Box,Image, LinkOverlay,LinkBox, Button } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import Slick, { Settings } from 'react-slick';
@@ -32,7 +32,7 @@ const Container = styled.div`
 `
 
 const SliderWrapper = styled.div`
-  width: calc(100% - 0.5px);
+  width: calc(100%);
   .slick-next{ 
     right:0!important;
   };
@@ -40,12 +40,12 @@ const SliderWrapper = styled.div`
     left:0!important;
   };
   .slick-arrow{ 
-    z-index:2!important;
+    z-index:2!important; 
   };
   .slick-prev:before,
   .slick-next:before {
     color: black;
-  }
+  };
 `
 
 
