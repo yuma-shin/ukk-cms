@@ -120,7 +120,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         <Slick {...settings}>
           {
             posts.map((post) => (
-              <LinkBox key={post.id}>
+              <LinkBox key={post.id} color="white">
                 <NewLogo date={post.publishedAt} />
                 <div className="background-info">
                     {post.image ? (
