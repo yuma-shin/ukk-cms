@@ -72,23 +72,23 @@ a:hover{
 }
 
 .background-info:hover{
-    border: solid 4px #ff1493;
+    border: solid 4px #7bc8bb;
     animation: color-change 3s linear infinite;
 }
 @keyframes color-change {
     0%,100%{
-        border-color:#ff1493;
+        border-color:#7bc8bb;
     }
 
     25%{
-        border-color:#8b4513;
+        border-color:#ee8595;
     }
 
     50%{
-        border-color:#0091EA;
+        border-color:#244a9e;
     }
 
     75%{
-        border-color:#9400d3;
+        border-color:#d0cb9d;
     }
 }
