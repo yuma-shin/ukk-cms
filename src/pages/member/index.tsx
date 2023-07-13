@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box, Link,Heading,Stack, Tag, TagLabel, HStack } from '@chakra-ui/react'
+import { Box, Link, Heading,Stack, Tag, TagLabel, HStack } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import { DateTime } from 'components/DateTime'

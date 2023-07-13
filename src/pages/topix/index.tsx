@@ -52,7 +52,7 @@ const SliderWrapper = styled.div`
 const settings: Settings = {
   infinite: true,
   centerMode: true,
-  slidesToShow: 2,
+  slidesToShow: 5,
   autoplay: true,
   speed: 1000,
   autoplaySpeed: 6000,
@@ -60,6 +60,18 @@ const settings: Settings = {
   arrows: true,
   pauseOnHover: true,
   responsive: [
+    {
+      breakpoint: 1666,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 1370,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
     {
       breakpoint: 992,
       settings: {
