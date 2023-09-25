@@ -99,7 +99,7 @@
         margin-right:3px;
         padding-left:3px;
         padding-right:3px;
-        font-size:1.2rem;
+        font-size:1.1rem;
         text-align: left;
     }
     .category {
@@ -109,7 +109,7 @@
         top: 0;
         bottom: 0;
         height:25px;
-        width:80px;
+        width:75px;
         background: #EDD23B;
         color: #173268; 
         border-left: 2px;
@@ -118,7 +118,7 @@
         font-size: 1rem;
     }
     .news-date {
-        font-size:1rem;
+        font-size:0.8rem;
     }
 }
 
