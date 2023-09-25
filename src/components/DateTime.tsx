@@ -3,7 +3,7 @@ import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 
 
-import { Text, Box } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {

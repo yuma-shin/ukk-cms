@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box, Image, LinkOverlay, LinkBox } from '@chakra-ui/react'
+import { Box, Image, LinkOverlay, LinkBox,Button, GridItem, Grid } from '@chakra-ui/react'
 import { client } from 'libs/client';
 import { Post } from 'types/blog'
 import Slick, { Settings } from 'react-slick';
@@ -50,9 +50,11 @@ const SliderWrapper = styled.div`
 
 
 const settings: Settings = {
+  //dots: true,
   infinite: true,
   centerMode: true,
-  slidesToShow: 5,
+  centerPadding: "0px",
+  slidesToShow: 3,
   autoplay: true,
   speed: 1000,
   autoplaySpeed: 6000,
@@ -63,13 +65,13 @@ const settings: Settings = {
     {
       breakpoint: 1666,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 3,
       },
     },
     {
       breakpoint: 1370,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
       },
     },
     {
@@ -127,51 +129,65 @@ const Home: NextPage<Props> = ({ posts }) => {
     <>
     <Container>
       <SliderWrapper>
-      <Slick {...settings}>
-        {
-          posts.map((post) => (
-            <LinkBox key={post.id} color="white" shadow={"xl"}>
-            <NewLogo date={post.publishedAt} />
-            <div className="background-info">
-              {post.image ? (
-                  <Image
-                  src={post.image.url}
-                  width="300px"
-                  height="150px"
-                  borderRadius="5px"
-                  />
-                ) : (
-                    <Image src="/noimg.png" alt="No Image" height="150px" width="300px" borderRadius="5px"/>
-                )}
-              {post.category ? (
-                <div className='category'>
-                  <div className='background-news'>
-                    {post.category}
-                  </div>
-                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+        <Slick {...settings}>
+          {
+            posts.map((post) => (
+              <LinkBox key={post.id} color="white">
+                <NewLogo date={post.publishedAt} />
+                <div className="background-info">
+                <Grid templateColumns='repeat(5, 1fr)' gap={2} display={{ base: "flex", md: "block" }}>
+                  <GridItem>
+                    {post.image ? (
+                        <Image
+                          src={post.image.url}
+                          borderRadius="5px"
+                          width={{base: "520px", md:"420px"}}
+                          height={{base: "136px", md:"236px"}}
+                        />
+                      ) : (
+                        <Image 
+                          src="/noimg.png" 
+                          alt="No Image"
+                          borderRadius="5px"
+                          width={{base: "520px", md:"420px"}}
+                          height={{base: "136px", md:"236px"}}
+                        />
+                      )}
+                  </GridItem>
+                  <GridItem>
+                    {post.category ? (
+                      <div className='category'>
+                        <div className='background-news'>
+                          {post.category}
+                        </div>
+                        <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                      </div>
+                    ) : (
+                      <div className='category'>
+                        <div className='background-news'>
+                          None
+                        </div>
+                        <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
+                      </div>
+                    )}
+                    {post.directlink ? (
+                      //<div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
+                      <div className='title'><LinkOverlay href={post.directlink} target="_blank">{post.title}</LinkOverlay></div>
+                    ) : (
+                      <FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
+                      //<div className='title'><a href={`/post/info/${post.id}`} target="_blank">{post.title}</a></div>
+                    )}
+                    <Box display={{ base: "none", md: "block" }}><div className="description">{post.description}</div></Box>
+                    </GridItem>
+                    </Grid>
                 </div>
-              ) : (
-                <div className='category'>
-                  <div className='background-news'>
-                    None
-                  </div>
-                  <span className='news-date'><DateTime datetime={post.publishedAt || ""} /></span>
-                </div>
-              )}
-              {post.directlink ? (
-                //<div className='title'><a href={post.directlink} target="_blank">{post.title}</a></div>
-                <div className='title'><LinkOverlay href={post.directlink} target="_blank">{post.title}</LinkOverlay></div>
-              ) : (
-                <FixedWindowLink href={`/post/topix/${post.id}`}>{post.title}</FixedWindowLink>
-                //<div className='title'><a href={`/post/topix/${post.id}`} target="_blank">{post.title}</a></div>
-              )}
-            </div>
-            </LinkBox>
-          ))
-        }
-      </Slick>
+              </LinkBox>
+              
+            ))
+          }
+        </Slick>
       </SliderWrapper>
-      </Container>
+    </Container>
     </>
   )
 }

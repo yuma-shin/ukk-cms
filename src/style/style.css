@@ -4,8 +4,10 @@
     height:25px;
     text-align: right;
     border-radius:5px;
-    width: 280px;
-    height:340px;
+    /*width: 280px;*/
+    /*height:340px;*/
+    max-width: 450px;
+    height:500px;
     /*transition:0.3s;*/
     padding:10px;
     border: 4px solid transparent;
@@ -17,14 +19,15 @@
 .background-news {
     top: 0;
     bottom: 0;
-    height:25px;
-    width:70px;
+    height:28px;
+    width:80px;
     background: #EDD23B;
     color: #173268; 
     border-left: 2px;
     text-align: center;
     float: left;
     border-radius:5px;
+    font-size: 1.1rem;
 }
 
 .category {
@@ -49,7 +52,7 @@
 
 .news-date {
     margin:10px;
-    font-size:15px;
+    font-size:1.1rem;
 }
 
 .title{
@@ -58,8 +61,65 @@
 	margin-right:3px;
 	padding-left:3px;
 	padding-right:3px;
-    font-size:15px;
-    text-align: center;
+    font-size:1.4rem;
+    text-align: left;
+}
+
+.description{
+    margin-top: 20px;
+	margin-left:3px;
+	margin-right:3px;
+	padding-left:3px;
+	padding-right:3px;
+    font-size:0.875rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 740px) {
+	.background-info {
+        top: 0;
+        bottom: 0;
+        height:25px;
+        text-align: right;
+        border-radius:5px;
+        /*width: 280px;*/
+        /*height:340px;*/
+        max-width: 450px;
+        height:240px;
+        /*transition:0.3s;*/
+        padding:10px;
+        border: 4px solid transparent;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba(54, 54, 54, 0.3);
+    }
+    .title{
+        margin-top: 15px;
+        margin-left:3px;
+        margin-right:3px;
+        padding-left:3px;
+        padding-right:3px;
+        font-size:1.2rem;
+        text-align: left;
+    }
+    .category {
+        margin-top:0px
+    }
+    .background-news {
+        top: 0;
+        bottom: 0;
+        height:25px;
+        width:80px;
+        background: #EDD23B;
+        color: #173268; 
+        border-left: 2px;
+        text-align: center;
+        border-radius:5px;
+        font-size: 1rem;
+    }
+    .news-date {
+        font-size:1rem;
+    }
 }
 
 a {
@@ -91,4 +151,12 @@ a:hover{
     75%{
         border-color:#d0cb9d;
     }
+}
+
+.slider__wrapper {
+    position: relative;
+  }
+
+.slider {
+    margin: 0 auto;
 }
