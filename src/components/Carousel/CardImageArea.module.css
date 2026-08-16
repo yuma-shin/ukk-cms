@@ -1,13 +1,14 @@
 /*
- * Image clip: a FIXED-SIZE container, absolutely positioned at the
- * upper-right of the card. overflow:hidden clips the hover scale so the
- * image area NEVER changes size.
+ * Image clip: a FIXED-SIZE, full-width container absolutely positioned at
+ * the top of the card (spanning both card edges). It protrudes only at the
+ * top. overflow:hidden clips the hover scale so the image area NEVER changes
+ * size.
  */
 .imageClip {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 92%;
+  left: 4%;
+  right: 4%;
   height: 230px;
   overflow: hidden;
   border-radius: 12px;

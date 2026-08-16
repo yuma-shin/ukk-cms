@@ -1,7 +1,8 @@
 .card {
   display: block;
   position: relative;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   height: 410px;
   overflow: hidden;
   border-radius: 12px;
@@ -21,21 +22,21 @@
   color: #edd23b;
 }
 
-/* Single blur surface: relative, inset from top (26px) and right (26px)
-   so the image protrudes beyond its upper-right corner. Holds text at bottom. */
+/* Single blur surface: relative, inset from top (26px) only, spanning the
+   full card width so the image protrudes beyond its top edge. Holds text at
+   bottom. */
 .blurBg {
   position: relative;
   box-sizing: border-box;
-  margin-top: 26px;
-  margin-right: 26px;
-  height: calc(100% - 26px);
+  margin-top: 40px;
+  height: calc(100% - 40px);
   background: rgba(54, 54, 54, 0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  padding-top: 232px;
+  padding-top: 218px;
 }
 
 /* Text content sits at the bottom of the blur surface */

@@ -31,7 +31,10 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({
 
   return (
     <div className={styles.container}>
-      <NavigationButton direction="prev" className={`carousel-prev ${styles.navPrev}`} />
+      <NavigationButton
+        direction="prev"
+        className={`carousel-prev ${styles.navPrev}`}
+      />
 
       <Swiper
         modules={[Navigation, Autoplay, A11y]}
@@ -42,17 +45,17 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({
           pauseOnMouseEnter: true,
         }}
         speed={1000}
-        spaceBetween={16}
+        spaceBetween={24}
         slidesPerView={4}
         navigation={{
           nextEl: ".carousel-next",
           prevEl: ".carousel-prev",
         }}
         breakpoints={{
-          0: { slidesPerView: 1, spaceBetween: 8 },
-          640: { slidesPerView: 2, spaceBetween: 12 },
-          768: { slidesPerView: 3, spaceBetween: 16 },
-          1280: { slidesPerView: 4, spaceBetween: 16 },
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          768: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
         }}
       >
         {posts.map((post) => (
@@ -62,7 +65,10 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({
         ))}
       </Swiper>
 
-      <NavigationButton direction="next" className={`carousel-next ${styles.navNext}`} />
+      <NavigationButton
+        direction="next"
+        className={`carousel-next ${styles.navNext}`}
+      />
     </div>
   );
 };
