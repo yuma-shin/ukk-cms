@@ -1,13 +1,5 @@
 import type { NextPage } from "next";
-import {
-  Box,
-  Link,
-  Heading,
-  Stack,
-  Tag,
-  TagLabel,
-  HStack,
-} from "@chakra-ui/react";
+import { Box, Link, Heading, Stack, Tag, HStack } from "@chakra-ui/react";
 import { client } from "libs/client";
 import { Post } from "types/blog";
 import { DateTime } from "components/DateTime";
@@ -60,9 +52,9 @@ const Home: NextPage<Props> = ({ posts }) => {
         <>
           <Box key={post.id}>
             <HStack>
-              <Tag size={"md"} variant="subtle" colorScheme="cyan">
-                <TagLabel>{post.category}</TagLabel>
-              </Tag>
+              <Tag.Root size={"md"} variant="subtle" colorPalette="cyan">
+                <Tag.Label>{post.category}</Tag.Label>
+              </Tag.Root>
               <FixedWindowLink href={`/post/member/${post.id}`}>
                 <DateTime datetime={post.publishedAt || ""} />
                 <Heading
