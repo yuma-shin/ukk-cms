@@ -6,33 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.17",
-    "@chakra-ui/react": "^2.5.1",
+    "@chakra-ui/react": "^3.36.1",
     "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "dayjs": "^1.11.7",
-    "framer-motion": "^9.1.6",
-    "html-react-parser": "^3.0.9",
+    "html-react-parser": "^5.2.17",
     "microcms-js-sdk": "^2.3.2",
-    "next": "^15.2.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.6",
-    "swiper": "^10.0.4"
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "swiper": "^14.1.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.26",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@types/node": "18.14.1",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "@types/react-slick": "^0.23.10",
-    "@types/styled-components": "^5.1.26",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1",
-    "typescript": "4.9.5"
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.3.1",
+    "typescript": "^5.9.3"
   }
 }
