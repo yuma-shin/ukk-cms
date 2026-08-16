@@ -12,7 +12,7 @@
     "@chakra-ui/react": "^3.36.1",
     "@emotion/react": "^11.10.6",
     "dayjs": "^1.11.7",
-    "html-react-parser": "^3.0.9",
+    "html-react-parser": "^5.2.17",
     "microcms-js-sdk": "^2.3.2",
     "next": "^16.3.1",
     "react": "^19.2.8",
