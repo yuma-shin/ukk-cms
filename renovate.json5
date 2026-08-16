@@ -17,6 +17,10 @@
         ":warning: **メジャーバージョンの更新が含まれます。CHANGELOG を確認してください。**",
       ],
     },
+    {
+      matchPackageNames: ["typescript"],
+      allowedVersions: "<7",
+    },
   ],
   prBodyTemplate: "{{{header}}}{{{notes}}}{{{table}}}{{{changelogs}}}",
   prConcurrentLimit: 0,
