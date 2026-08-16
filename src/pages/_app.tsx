@@ -9,6 +9,11 @@ import Fonts from "components/Fonts";
 import "style/style.css";
 
 const config = defineConfig({
+  globalCss: {
+    "html, body": {
+      background: "transparent",
+    },
+  },
   theme: {
     tokens: {
       fonts: {
