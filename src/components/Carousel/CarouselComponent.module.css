@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  background: rgba(0, 0, 0, 0);
+  padding: 0 56px;
+  width: 100%;
+}
+
+.emptyContainer {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Ensure all Swiper slides have uniform height */
+.container :global(.swiper) {
+  overflow: hidden;
+}
+
+.container :global(.swiper-slide) {
+  height: 410px;
+}
+
+.navPrev {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.navNext {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding: 0 48px;
+  }
+}
