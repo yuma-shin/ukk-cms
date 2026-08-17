@@ -25,3 +25,8 @@
   object-fit: cover;
   transition: transform 300ms ease-in-out;
 }
+@media (max-width: 767px) {
+  .imageClip {
+    height: 170px;
+  }
+}
