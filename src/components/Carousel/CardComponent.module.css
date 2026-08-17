@@ -30,7 +30,7 @@
   box-sizing: border-box;
   margin-top: 40px;
   height: calc(100% - 40px);
-  background: rgba(54, 54, 54, 0.72);
+  background: rgba(54, 54, 54, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
