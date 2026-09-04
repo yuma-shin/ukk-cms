@@ -9,26 +9,26 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.36.1",
+    "@chakra-ui/react": "^3.37.0",
     "@emotion/react": "^11.14.0",
-    "dayjs": "^1.11.21",
-    "html-react-parser": "^6.1.5",
+    "dayjs": "^1.11.23",
+    "html-react-parser": "^6.1.7",
     "microcms-js-sdk": "^3.4.0",
-    "next": "^16.3.1",
+    "next": "^16.3.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "swiper": "^14.1.0"
+    "swiper": "^14.2.0"
   },
   "overrides": {
     "postcss": "^8.5.26",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
-    "@types/node": "26.2.0",
+    "@types/node": "26.4.0",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "eslint": "^10.8.1",
-    "eslint-config-next": "^16.3.1",
+    "@types/react-dom": "^19.2.5",
+    "eslint": "^10.9.1",
+    "eslint-config-next": "^16.3.3",
     "typescript": "^6.0.3"
   }
 }
