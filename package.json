@@ -14,7 +14,7 @@
     "dayjs": "^1.11.23",
     "html-react-parser": "^6.1.7",
     "microcms-js-sdk": "^3.5.0",
-    "next": "^16.3.1",
+    "next": "^16.3.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "swiper": "^14.2.0"
